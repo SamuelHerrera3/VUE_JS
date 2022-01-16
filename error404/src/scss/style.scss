@@ -1,0 +1,103 @@
+:root{
+    --sm: 20px;
+    --md: 30px;
+    --lg: 60px;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+*{  
+    font-family: 'Quicksand', sans-serif;
+    margin: 0 auto;
+}
+
+.cont{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: red;
+
+    &__img{
+        display: flex;
+        width: 45vw;
+        height: 400px;
+        overflow: hidden;
+
+        img{
+            display: block;
+            height: 350px;
+            animation: spidy 7.5s infinite;
+        }
+    }
+
+    &__txt{
+        width: 55vw;
+        text-align: center;
+        height: 300px;
+        padding-top: 40px;
+        
+        h1{
+            font-weight: bold;
+            font-size: var(--lg);
+            display:block;
+            font-family: monospace;
+            white-space: nowrap;
+            border-right: 4px solid;
+            width: 9ch;
+            animation: typing 2s steps(9),
+                blink .5s infinite step-end alternate;
+                overflow: hidden;
+        }
+        
+        p{
+            padding: 55px 40px;
+            font-weight: medium;
+            font-size: var(--md);
+            animation-name: slidein;
+            animation-duration: 3s;
+        }
+        
+    }
+}
+
+@keyframes spidy {
+    0%{
+        transform: translateY(-900px);
+    }
+    25%{
+        transform: translateY(0) rotate(10deg);
+    }
+    50%{
+        transform: rotate(-10deg);
+    }
+    75%{
+        transform: rotate(10deg);
+    }
+    100%{
+        transform: translateY(-900px);
+    }
+}
+
+@keyframes typing {
+    from { width: 0}    
+}
+
+@keyframes blink {
+    50%{
+        border-color: transparent;
+    }
+}
+
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 300%
+    }
+
+    to {    
+        margin-left: 0%;
+        width: 87.5%;
+    }
+}
